@@ -1,0 +1,14 @@
+services:
+  jupyter-minimal:
+    build: 
+      context: .
+      dockerfile: ./services/jupyter-minimal/jupyter-minimal.Dockerfile
+    ports:
+      - "8889:8888"
+    volumes:
+      - ./work/:/home/jovyan/work
+    environment:
+      - JUPYTER_TOKEN=codeop
+
+volumes:
+  db_data:
